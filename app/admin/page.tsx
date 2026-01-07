@@ -294,8 +294,8 @@ export default function AdminPage() {
                           <input
                             type="number"
                             step="0.01"
-                            value={editingPrice.value}
-                            onChange={(e) => setEditingPrice({ ...editingPrice, value: e.target.value })}
+                            value={editingPrice?.value ?? ''}
+                            onChange={(e) => setEditingPrice(prev => prev ? { ...prev, value: e.target.value } : null)}
                             className="input w-24 py-1.5 px-2 text-sm"
                             autoFocus
                             onKeyDown={(e) => {
